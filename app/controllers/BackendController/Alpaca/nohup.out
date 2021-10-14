@@ -1,0 +1,60 @@
+record added to relaion Trades 
+data fetched in 6.414896291
+record added to relaion Trades 
+data fetched in 7.10553175
+record added to relaion Trades 
+data fetched in 7.866876166
+record added to relaion Trades 
+data fetched in 9.24754575
+record added to relaion Trades 
+data fetched in 32.4108315
+record added to relaion Trades 
+data fetched in 34.388389833000005
+record added to relaion Trades 
+data fetched in 47.244512
+record added to relaion Trades 
+data fetched in 66.869986291
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/DataPopulateController.py", line 277, in <module>
+    obj.populate_price_quote_trade("2021-10-01",request_for="trades",chunk_size=5)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/DataPopulateController.py", line 271, in populate_price_quote_trade
+    self.process_data(timeframe,data,request_for)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/DataPopulateController.py", line 248, in process_data
+    self.insert_to_database(Trades,df)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/DataPopulateController.py", line 116, in insert_to_database
+    session.bulk_insert_mappings(relation,df.to_dict(orient="records"))
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3698, in bulk_insert_mappings
+    self._bulk_save_mappings(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3805, in _bulk_save_mappings
+    transaction.rollback(_capture_exception=True)
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3793, in _bulk_save_mappings
+    persistence._bulk_insert(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 104, in _bulk_insert
+    _emit_insert_statements(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1094, in _emit_insert_statements
+    c = connection._execute_20(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    util.raise_(exc_info[1], with_traceback=exc_info[2])
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1779, in _execute_context
+    self.dialect.do_executemany(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 962, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/psycopg2/extras.py", line 1292, in execute_values
+    cur.execute(b''.join(parts))
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/encodings/utf_8.py", line 15, in decode
+    def decode(input, errors='strict'):
+KeyboardInterrupt

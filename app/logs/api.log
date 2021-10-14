@@ -1,0 +1,873 @@
+2021-09-27 18:57:45,612 api - ERROR:error fetching prices for assets:None timeframe:minute from source 2 ts:None to None
+Traceback (most recent call last):
+  File "D:\trading-final\Trading-final\trading\app\api\Routes\restapi.py", line 100, in getPrices
+    data=await dt_obj.get_prices(assets,timeframe,start,end,limit=limit)
+  File "D:\trading-final\Trading-final\trading\app\controllers\ApiController\DataController.py", line 154, in get_prices
+    raise e
+  File "D:\trading-final\Trading-final\trading\app\controllers\ApiController\DataController.py", line 88, in get_prices
+    data=await bar_obj.get_bar_min_by_ticker(assets,start=start,end=end,limit=limit)
+  File "D:\trading-final\Trading-final\trading\app\controllers\BackendController\Alpaca\BarsController.py", line 116, in get_bar_min_by_ticker
+    data=await self.query_data(BarMinute,"prices_min",parameter_val = ticker,limit=limit,start=start,end=end)
+  File "D:\trading-final\Trading-final\trading\app\controllers\BackendController\Alpaca\BarsController.py", line 85, in query_data
+    q_res=session.query(Stocks).filter( getattr(Stocks,parameter) ==  parameter_val).one()
+  File "c:\programdata\anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 2808, in one
+    return self._iter().one()
+  File "c:\programdata\anaconda3\lib\site-packages\sqlalchemy\engine\result.py", line 1374, in one
+    return self._only_one_row(
+  File "c:\programdata\anaconda3\lib\site-packages\sqlalchemy\engine\result.py", line 561, in _only_one_row
+    raise exc.NoResultFound(
+sqlalchemy.exc.NoResultFound: No row was found when one was required
+2021-09-27 22:46:24,201 api - ERROR:there was some error fetching source
+Traceback (most recent call last):
+  File "D:\trading-final\Trading-final\trading\app\controllers\ApiController\DataController.py", line 41, in get_source_details
+    self.source_nme=s_infm[0]["source_name"]
+TypeError: 'int' object is not subscriptable
+2021-09-27 22:46:24,227 api - ERROR:some error occured
+Traceback (most recent call last):
+  File "D:\trading-final\Trading-final\trading\app\controllers\ApiController\DataController.py", line 41, in get_source_details
+    self.source_nme=s_infm[0]["source_name"]
+TypeError: 'int' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\trading-final\Trading-final\trading\app\api\Routes\restapi.py", line 39, in tickers
+    data = await d_obj.get_stocks()
+  File "D:\trading-final\Trading-final\trading\app\controllers\ApiController\DataController.py", line 59, in get_stocks
+    await self.get_source_details()
+  File "D:\trading-final\Trading-final\trading\app\controllers\ApiController\DataController.py", line 46, in get_source_details
+    raise ConnectionError
+ConnectionError
+2021-09-29 09:20:18,913 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:21:43,178 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:23:56,513 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:27:34,595 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:35:44,485 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:35:44,486 api - ERROR:there was some error fetching source
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+2021-09-29 09:35:44,486 api - ERROR:some error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 39, in tickers
+    data = await d_obj.get_stocks()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 59, in get_stocks
+    await self.get_source_details()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 46, in get_source_details
+    raise ConnectionError
+ConnectionError
+2021-09-29 09:40:54,593 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:40:54,593 api - ERROR:there was some error fetching source
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+2021-09-29 09:40:54,594 api - ERROR:some error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 39, in tickers
+    data = await d_obj.get_stocks()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 59, in get_stocks
+    await self.get_source_details()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 46, in get_source_details
+    raise ConnectionError
+ConnectionError
+2021-09-29 09:40:55,824 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:40:55,824 api - ERROR:there was some error fetching source
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+2021-09-29 09:40:55,824 api - ERROR:some error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 39, in tickers
+    data = await d_obj.get_stocks()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 59, in get_stocks
+    await self.get_source_details()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 46, in get_source_details
+    raise ConnectionError
+ConnectionError
+2021-09-29 09:40:57,364 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:40:57,365 api - ERROR:there was some error fetching source
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+2021-09-29 09:40:57,365 api - ERROR:some error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 39, in tickers
+    data = await d_obj.get_stocks()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 59, in get_stocks
+    await self.get_source_details()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 46, in get_source_details
+    raise ConnectionError
+ConnectionError
+2021-09-29 09:41:18,760 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 09:41:18,761 api - ERROR:there was some error fetching source
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+2021-09-29 09:41:18,762 api - ERROR:some error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 86, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 40, in get_source_details
+    s_infm=await s_obj.source_by_parm(self.source_id)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 92, in source_by_parm
+    raise ConnectionError()
+ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 39, in tickers
+    data = await d_obj.get_stocks()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 59, in get_stocks
+    await self.get_source_details()
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 46, in get_source_details
+    raise ConnectionError
+ConnectionError
+2021-09-29 09:42:17,876 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 10:08:24,591 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 10:35:29,139 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 10:37:12,278 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 10:37:20,648 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 11:51:16,889 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 45, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 12:22:47,689 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 46, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 46, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 12:24:09,578 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 87, in source_by_parm
+    return [dict(s) for s in sources]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 87, in <listcomp>
+    return [dict(s) for s in sources]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-09-29 12:26:30,824 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 46, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 46, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 06:58:33,097 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 46, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 46, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:03:47,983 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 47, in retreive
+    print(s.name)
+AttributeError: 'Source' object has no attribute 'name'
+2021-10-07 07:04:42,011 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 50, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 50, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:11:04,996 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 47, in retreive
+    print(dict(s))
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:34:24,252 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 44, in retreive
+    return [s._asdict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 44, in <listcomp>
+    return [s._asdict() for s in sorces]
+AttributeError: 'Source' object has no attribute '_asdict'
+2021-10-07 07:34:51,719 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 44, in retreive
+    return [s._asdict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 44, in <listcomp>
+    return [s._asdict() for s in sorces]
+AttributeError: 'Source' object has no attribute '_asdict'
+2021-10-07 07:39:52,782 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:42:21,809 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:44:28,011 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:44:31,851 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:44:34,605 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:44:38,334 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:45:14,814 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:45:18,093 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:49:28,420 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:49:30,621 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:49:42,011 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:49:43,864 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:49:47,156 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:49:49,159 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:49:51,359 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 07:52:42,619 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    return [dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    return [dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-07 08:04:05,720 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    drt=[s.todict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    drt=[s.todict() for s in sorces]
+AttributeError: 'Source' object has no attribute 'todict'
+2021-10-07 08:05:01,789 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    drt=[s.todict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    drt=[s.todict() for s in sorces]
+AttributeError: 'Source' object has no attribute 'todict'
+2021-10-09 08:37:04,238 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    drt=[s.todict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    drt=[s.todict() for s in sorces]
+AttributeError: 'Source' object has no attribute 'todict'
+2021-10-09 08:57:54,069 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    drt=[s.todict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    drt=[s.todict() for s in sorces]
+AttributeError: 'Source' object has no attribute 'todict'
+2021-10-09 09:02:57,971 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    drt=[s.todict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    drt=[s.todict() for s in sorces]
+AttributeError: 'Source' object has no attribute 'todict'
+2021-10-09 13:32:00,161 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    drt=[s.todict() for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    drt=[s.todict() for s in sorces]
+AttributeError: 'Source' object has no attribute 'todict'
+2021-10-09 13:40:45,418 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in retreive
+    drt=[dict(s) for s in sorces]
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 43, in <listcomp>
+    drt=[dict(s) for s in sorces]
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 286, in iter
+    for i in model.asdict().iteritems():
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/dictalchemy/utils.py", line 156, in asdict
+    for (k, args) in follow.iteritems():
+AttributeError: 'dict' object has no attribute 'iteritems'
+2021-10-09 13:48:58,520 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 42, in retreive
+    sorces= session.query(Source).to_dict()
+AttributeError: 'Query' object has no attribute 'to_dict'
+2021-10-09 13:49:01,395 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 42, in retreive
+    sorces= session.query(Source).to_dict()
+AttributeError: 'Query' object has no attribute 'to_dict'
+2021-10-09 13:49:03,097 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 42, in retreive
+    sorces= session.query(Source).to_dict()
+AttributeError: 'Query' object has no attribute 'to_dict'
+2021-10-09 13:50:28,110 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 42, in retreive
+    sorces= session.query(Source).to_dict()
+AttributeError: 'Query' object has no attribute 'to_dict'
+2021-10-09 13:50:30,900 api - ERROR:error occured
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/SourceController.py", line 42, in retreive
+    sorces= session.query(Source).to_dict()
+AttributeError: 'Query' object has no attribute 'to_dict'
+2021-10-09 15:55:52,480 api - ERROR:error fetching trades for assets:aaa
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 124, in getTrades
+    data=await dt_obj.get_trades(assets,start,end,limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 216, in get_trades
+    raise e
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 170, in get_trades
+    data=await trades_obj.get_trades_by_ticker(assets,start,end,limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/TradesController.py", line 98, in get_trades_by_ticker
+    data=await self.query_data(Trades,"trades",parameter_val = ticker ,start=start ,end=end , limit=limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/TradesController.py", line 74, in query_data
+    q_res=session.query(Stocks).filter( getattr(Stocks,parameter) ==  parameter_val).one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2808, in one
+    return self._iter().one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1385, in one
+    return self._only_one_row(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 561, in _only_one_row
+    raise exc.NoResultFound(
+sqlalchemy.exc.NoResultFound: No row was found when one was required
+2021-10-11 13:55:38,645 api - ERROR:error fetching prices for assets:None timeframe:daily from source 3 ts:None to None
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 100, in getPrices
+    data=await dt_obj.get_prices(assets,timeframe,start,end,limit=limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 154, in get_prices
+    raise e
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 148, in get_prices
+    data =  await bar_obj.get_bar_daily_by_ticker(assets,start=start,end=end,limit=limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/BarsController.py", line 134, in get_bar_daily_by_ticker
+    data=await self.query_data(BarDaily,"prices_daily",parameter_val = ticker,limit = limit,start = start,end = end)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/BarsController.py", line 86, in query_data
+    q_res=session.query(Stocks).filter( getattr(Stocks,parameter) ==  parameter_val).one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2808, in one
+    return self._iter().one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1385, in one
+    return self._only_one_row(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 561, in _only_one_row
+    raise exc.NoResultFound(
+sqlalchemy.exc.NoResultFound: No row was found when one was required
+2021-10-12 09:44:03,713 api - ERROR:error fetching prices for assets:None timeframe:daily from source 3 ts:None to None
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 100, in getPrices
+    data=await dt_obj.get_prices(assets,timeframe,start,end,limit=limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 154, in get_prices
+    raise e
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 148, in get_prices
+    data =  await bar_obj.get_bar_daily_by_ticker(assets,start=start,end=end,limit=limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/BarsController.py", line 134, in get_bar_daily_by_ticker
+    data=await self.query_data(BarDaily,"prices_daily",parameter_val = ticker,limit = limit,start = start,end = end)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/BarsController.py", line 86, in query_data
+    q_res=session.query(Stocks).filter( getattr(Stocks,parameter) ==  parameter_val).one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2808, in one
+    return self._iter().one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1385, in one
+    return self._only_one_row(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 561, in _only_one_row
+    raise exc.NoResultFound(
+sqlalchemy.exc.NoResultFound: No row was found when one was required
+2021-10-14 02:29:14,276 api - ERROR:error fetching prices for assets:BBB timeframe:min from source 3 ts:None to None
+Traceback (most recent call last):
+  File "/Users/faisal/Desktop/Trading/app/api/Routes/restapi.py", line 100, in getPrices
+    data=await dt_obj.get_prices(assets,timeframe,start,end,limit=limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 154, in get_prices
+    raise e
+  File "/Users/faisal/Desktop/Trading/app/controllers/ApiController/DataController.py", line 148, in get_prices
+    data =  await bar_obj.get_bar_daily_by_ticker(assets,start=start,end=end,limit=limit)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/BarsController.py", line 134, in get_bar_daily_by_ticker
+    data=await self.query_data(BarDaily,"prices_daily",parameter_val = ticker,limit = limit,start = start,end = end)
+  File "/Users/faisal/Desktop/Trading/app/controllers/BackendController/Alpaca/BarsController.py", line 86, in query_data
+    q_res=session.query(Stocks).filter( getattr(Stocks,parameter) ==  parameter_val).one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2808, in one
+    return self._iter().one()
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1385, in one
+    return self._only_one_row(
+  File "/opt/anaconda3/envs/tradingenv/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 561, in _only_one_row
+    raise exc.NoResultFound(
+sqlalchemy.exc.NoResultFound: No row was found when one was required
